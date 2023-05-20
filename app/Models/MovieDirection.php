@@ -11,4 +11,9 @@ class MovieDirection extends Model
 
     public $timestamps = false;
 
+    public function directors()
+    {
+        return $this->belongsToMany(Director::class, 'movie_direction', 'mov_id', 'dir_id');
+    }
+
 }

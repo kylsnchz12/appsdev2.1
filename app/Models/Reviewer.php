@@ -12,4 +12,9 @@ class Reviewer extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'rev_id';
+
+    public function ratings() {
+        return $this->hasMany(Rating::class, 'rev_id');
+    }
+
 }

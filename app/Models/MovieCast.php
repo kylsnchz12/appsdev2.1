@@ -11,4 +11,12 @@ class MovieCast extends Model
 
     public $timestamps = false;
 
+    public function movie(){
+        return $this->belongsTo(Movie::class, 'mov_id');
+    }
+
+    public function actor(){
+        return $this->belongsTo(Actor::class, 'act_id');
+    }
+
 }

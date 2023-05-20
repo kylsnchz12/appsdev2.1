@@ -12,4 +12,8 @@ class Genres extends Model
     public $timestamps = false;
 
     protected $primaryKey = 'gen_id';
+    
+    public function movies() {
+        return $this->belongsToMany(Movie::class, 'movie_genres');
+    }
 }
