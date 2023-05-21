@@ -11,7 +11,7 @@ class MovieController extends Controller
      * Show a list of all of the movies.
      */
     public function getMovies() {
-        $data = Movie::all();
+        $data = Movie::paginate(10);
 
         return response()->json([
             'data' => $data,
